@@ -205,9 +205,8 @@ button {
 /* Ok, this is where the fun starts.
 -------------------------------------------------------------------------------*/
 
-/* new Linux- and Windows-friendly sans-serif font stack: http://mky.be/fontstack */
 body {
-  font: 14px Helmet, Freesans, sans-serif;
+  font: 14px 'Ubuntu', sans-serif;
 }
 
 /* using local fonts? make sure to read up on Paul Irish's

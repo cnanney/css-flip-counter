@@ -30,36 +30,37 @@
 <body>
 <h1>CSS FLIP-COUNTER</h1>
 
-<ul id="style-switcher" class="clearfix">
+<ul id="style-switcher">
   <li><a href="#" class="active" data-style="default">Default</a></li>
   <li><a href="#" data-style="light">Light</a></li>
   <li><a href="#" data-style="small">Small</a></li>
   <li><a href="#" data-style="huge">Huge</a></li>
 </ul>
 
-<div id="wrapper">
-  <ul class="flip-counter default" id="myCounter"></ul>
+<div class="clearfix">
+	<div class="counter-wrapper">
+		<ul class="flip-counter default" id="myCounter"></ul>
+	</div>
 </div>
-<!-- Are you serious? A clear div in 2012? Yes. -->
-<div class="clear"></div>
-<ul id="demo_controls">
-  <li>Increment:
-    <span id="inc_value">123</span>
 
+<ul id="demo_controls">
+  <li>
+		<p>Increment: <span id="inc_value">123</span></p>
     <div id="inc_slider" class="demo_widget"></div>
   </li>
-  <li>Pace:
-    <span id="pace_value">1000</span>ms
+  <li>
+		<p>Pace: <span id="pace_value">1000</span>ms</p>
     <div id="pace_slider" class="demo_widget"></div>
   </li>
 </ul>
 
-<script>
+<p class="info">Slide Increment to 0 to stop.</p>
 
+<script>
 
   $(function(){
 
-    var myCounter = new flipCounter('myCounter', {value: 1000, inc: 123, pace: 1000, auto: false});
+    var myCounter = new flipCounter('myCounter', {value: 1000, inc: 123, pace: 1000, auto: true});
 
     $('#style-switcher a').on('click', function(e){
       e.preventDefault();

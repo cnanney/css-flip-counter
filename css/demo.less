@@ -10,6 +10,7 @@ h1 {
 }
 
 #style-switcher {
+  .clearfix();
   list-style-type: none;
   width: 600px;
   margin: 20px auto 10px;
@@ -43,50 +44,27 @@ h1 {
   }
 }
 
-// What year is this?
-.clear {
-  clear: both
-}
-
 #demo_controls {
+  .clearfix();
   position: relative;
   width: 700px;
-  margin: 20px auto;
-  list-style-type: none
+  margin: 0 auto;
+  padding: 20px 0;
+  list-style-type: none;
+  li {
+    width: 320px;
+    float: left;
+    text-align: center;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 15px;
+    p {
+      margin-bottom: 10px;
+    }
+  }
 }
 
-#demo_controls li {
-  width: 320px;
-  float: left;
+p.info {
   text-align: center;
-  margin: 0 15px;
-  font-weight: bold;
-  font-size: 13px
-}
-
-.demo_widget {
-  margin-top: 10px
-}
-
-.moar-css-plz {
-  width: 760px;
-  padding: 20px;
-  margin: 5px auto 0;
-  text-align: center;
-  font-size: 12px;
-  line-height: 18px
-}
-
-.moar-css-plz p {
-  margin-bottom: 10px
-}
-
-.moar-css-plz a {
-  color: #2366DB;
-  text-decoration: none
-}
-
-.moar-css-plz a:hover {
-  color: #2366DB;
-  text-decoration: underline
+  margin-top: 20px;
 }
