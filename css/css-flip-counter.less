@@ -1,0 +1,161 @@
+// Some defaults
+
+@digitWidth: 60px;
+@digitHeight: 90px;
+@digitFontSize: 90px;
+
+@digitMargin: 10px;
+@digitBackground: black;
+@digitColor: white;
+
+@digitFontFamily: 'Ubuntu', sans-serif;
+@digitFontWeight: 700;
+
+@digitFlipDuration: '0.3s ease-in';
+@digitFlipPerspective: 300px;
+
+@delimiterFontSize: 52px;
+
+// Base stylings
+
+#wrapper {
+  .clearfix();
+  float: right;
+  position: relative;
+  left: -50%;
+  margin-top: 20px;
+}
+
+.flip-counter {
+  .clearfix();
+  position: relative;
+  left: 50%;
+  list-style-type: none;
+
+  li {
+    float: right;
+  }
+}
+
+.build-counter(@className,
+@digitWidth: @digitWidth,
+@digitHeight: @digitHeight,
+@digitFontSize: @digitFontSize,
+@digitMargin: @digitMargin,
+@digitBackground: @digitBackground,
+@digitColor: @digitColor,
+@delimiterFontSize: @delimiterFontSize,
+@digitFlipPerspective: @digitFlipPerspective
+) {
+  @shadowColor: fadeout(@digitBackground, 50%);
+
+  (~".flip-counter.@{className} .digit") {
+    position: relative;
+    z-index: 0;
+
+    width: @digitWidth;
+    height: @digitHeight;
+    margin-left: @digitMargin;
+    background-color: @digitBackground;
+
+    text-align: center;
+    text-shadow: 0px 0px 1px @digitColor; // Fix for being slightly off-center with this font
+    text-indent: 1px;
+    line-height: 0;
+
+    .perspective(@digitFlipPerspective);
+    .box-shadow(1px 1px 5px 0px @shadowColor);
+    .border-radius(5px);
+
+    &:last-child {
+      margin-left: 0;
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+
+      height: @digitHeight / 2;
+      width: @digitWidth;
+      overflow: hidden;
+
+      font-size: @digitFontSize;
+      font-family: @digitFontFamily;
+      font-weight: @digitFontWeight;
+
+      background: @digitBackground;
+      color: @digitColor;
+
+      .border-radius(5px);
+
+      &.front {
+        top: 0;
+        padding-top: @digitHeight / 2;
+      }
+
+      &.back {
+        bottom: 0;
+      }
+    }
+
+    .shadow {
+      position: absolute;
+      z-index: 100;
+
+      height: @digitHeight / 2;
+      width: @digitWidth;
+
+      border-bottom: 1px solid fadeout(@digitBackground, 20%);
+      .box-shadow(0px 4px 7px -4px fadeout(@digitBackground, 20%));
+    }
+
+    .hinge {
+      position: absolute;
+
+      height: @digitHeight / 2;
+      width: @digitWidth;
+
+      .transform-style(preserve-3d);
+      .transition("transform @{digitFlipDuration}");
+      .transform-origin(50% 100%);
+
+      span {
+        width: @digitWidth;
+        height: 0px;
+
+        .backface-visibility(hidden);
+
+        &.front {
+          padding-top: @digitHeight / 2;
+        }
+
+        &.back {
+          height: @digitHeight / 2;
+          .rotateX(180deg);
+        }
+
+      }
+    }
+
+    &.animate .hinge {
+      .rotateX(-180deg);
+    }
+  }
+
+  (~".flip-counter.@{className} .digit-delimiter") {
+    padding-top: @digitHeight - @delimiterFontSize;
+    margin-right: -(@digitMargin / 2);
+
+    font-family: @digitFontFamily;
+    font-weight: @digitFontWeight;
+    font-size: @delimiterFontSize;
+    color: @digitBackground;
+
+    text-indent: (@digitMargin) / 3;
+    text-shadow: 1px 1px 5px @shadowColor;
+  }
+}
+
+.no-csstransforms3d .flip-counter .digit .hinge span.back {
+  display: none;
+}

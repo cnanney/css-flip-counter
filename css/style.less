@@ -1,0 +1,28 @@
+// Way over-kill reset
+// -------------------------
+@import 'reset.css';
+
+// Mixins
+// -------------------------
+@import 'mixins.less';
+
+// Demo page styles
+// -------------------------
+@import 'demo.less';
+
+// Base counter styles and builder
+// -------------------------
+@import 'css-flip-counter.less';
+
+// Lets make some counters!
+// -------------------------
+// Simple default
+.build-counter('default');
+// Light
+.build-counter('light', 60px, 90px, 90px, 10px, #E8F1FF, white, 52px, 300px);
+// Small
+.build-counter('small', 30px, 40px, 34px, 5px, black, white, 25px, 300px);
+// Huge mofo
+.build-counter('huge', 140px, 200px, 190px, 20px, black, white, 70px, 800px);
+
+
