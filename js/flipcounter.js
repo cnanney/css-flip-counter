@@ -74,7 +74,7 @@ var flipCounter = function(d, options){
   /**
    * Sets counter to auto-increment (true) or not (false).
    *
-   * @param {bool} a
+   * @param {boolean} a
    *   Should counter auto-increment, true or false
    */
   this.setAuto = function(a){
@@ -190,7 +190,7 @@ var flipCounter = function(d, options){
       dNew = _isNumber(digitsNew[i]) ? digitsNew[i] : '';
       dOld = _isNumber(digitsOld[i]) ? digitsOld[i] : '';
       html += '<li class="digit" id="digit-a'+i+'">'+
-        '<div class="shadow"></div>'+
+        '<div class="line"></div>'+
         '<span class="front">'+dNew+'</span>'+
         '<span class="back">'+dOld+'</span>'+
         '<div class="hinge">'+
@@ -198,7 +198,7 @@ var flipCounter = function(d, options){
         '<span class="back">'+dNew+'</span>'+
         '</div>'+
         '</li>';
-      if (bit != (count) && bit % 3 == 0){
+      if (bit !== count && bit % 3 === 0){
         html += '<li class="digit-delimiter">,</li>';
       }
       bit++;

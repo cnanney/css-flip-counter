@@ -18,8 +18,7 @@
 
 // Base stylings
 
-#wrapper {
-  .clearfix();
+.counter-wrapper {
   float: right;
   position: relative;
   left: -50%;
@@ -27,7 +26,6 @@
 }
 
 .flip-counter {
-  .clearfix();
   position: relative;
   left: 50%;
   list-style-type: none;
@@ -38,14 +36,14 @@
 }
 
 .build-counter(@className,
-@digitWidth: @digitWidth,
-@digitHeight: @digitHeight,
-@digitFontSize: @digitFontSize,
-@digitMargin: @digitMargin,
-@digitBackground: @digitBackground,
-@digitColor: @digitColor,
-@delimiterFontSize: @delimiterFontSize,
-@digitFlipPerspective: @digitFlipPerspective
+	@digitWidth: @digitWidth,
+	@digitHeight: @digitHeight,
+	@digitFontSize: @digitFontSize,
+	@digitMargin: @digitMargin,
+	@digitBackground: @digitBackground,
+	@digitColor: @digitColor,
+	@delimiterFontSize: @delimiterFontSize,
+	@digitFlipPerspective: @digitFlipPerspective
 ) {
   @shadowColor: fadeout(@digitBackground, 50%);
 
@@ -59,9 +57,12 @@
     background-color: @digitBackground;
 
     text-align: center;
-    text-shadow: 0px 0px 1px @digitColor; // Fix for being slightly off-center with this font
-    text-indent: 1px;
     line-height: 0;
+    // Fix for slight Chrome-Win font jumping
+    // https://code.google.com/p/chromium/issues/detail?id=137692
+    // 1px not enough, unfortunately
+    -webkit-text-stroke: 2px;
+
 
     .perspective(@digitFlipPerspective);
     .box-shadow(1px 1px 5px 0px @shadowColor);
@@ -74,6 +75,9 @@
     span {
       position: absolute;
       left: 0;
+      // Quick fix for some numbers of this font leaning slightly left
+      // Using text-align or letter-spacing causes alignment issues in FF-Mac
+      padding-left: 2px;
 
       height: @digitHeight / 2;
       width: @digitWidth;
@@ -98,19 +102,20 @@
       }
     }
 
-    .shadow {
+    .line {
       position: absolute;
-      z-index: 100;
+      z-index: 10;
 
       height: @digitHeight / 2;
       width: @digitWidth;
 
-      border-bottom: 1px solid fadeout(@digitBackground, 20%);
+      border-bottom: 1px solid fadeout(@digitBackground, 30%);
       .box-shadow(0px 4px 7px -4px fadeout(@digitBackground, 20%));
     }
 
     .hinge {
       position: absolute;
+      z-index: 5;
 
       height: @digitHeight / 2;
       width: @digitWidth;
@@ -122,6 +127,7 @@
       span {
         width: @digitWidth;
         height: 0px;
+        z-index: 5px;
 
         .backface-visibility(hidden);
 
@@ -156,6 +162,6 @@
   }
 }
 
-.no-csstransforms3d .flip-counter .digit .hinge span.back {
+.no-csstransforms3d span.back {
   display: none;
 }
