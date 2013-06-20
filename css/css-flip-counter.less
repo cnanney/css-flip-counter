@@ -74,23 +74,21 @@
     span {
       position: absolute;
       left: 0;
-      // Quick fix for some numbers of this font leaning slightly left
-      // Using text-align or letter-spacing causes alignment issues in FF-Mac
-      padding-left: 2px;
 
       height: @digitHeight / 2;
       width: @digitWidth;
       overflow: hidden;
+      .border-radius(5px);
 
       font-size: @digitFontSize;
       font-family: @digitFontFamily;
       font-weight: @digitFontWeight;
+      text-indent: 2px;
 
-      background: @digitBackground;
+      background-color: @digitBackground;
       color: @digitColor;
 
-      .border-radius(5px);
-
+      // Prevents some jumping around in FF
       .translate3d(0, 0, 0);
 
       &.front {
