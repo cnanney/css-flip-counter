@@ -21,18 +21,18 @@ var flipCounter = function(d, options){
   };
 
   var counter = options || {};
-  var document = window.document;
+  var doc = window.document;
 
   for (var opt in defaults){
     counter[opt] = counter.hasOwnProperty(opt) ? counter[opt] : defaults[opt];
   }
 
-  var digitsOld = [], digitsNew = [], digitsAnimate = [], x, y, nextCount = null,
-    best = {
-      q: null,
-      pace: 0,
-      inc: 0
-    };
+  var digitsOld = [], digitsNew = [], digitsAnimate = [], x, y, nextCount = null;
+
+  var div = d;
+  if (typeof d === 'string'){
+    div = doc.getElementById(d);
+  }
 
   /**
    * Sets the value of the counter and animates the digits to new value.
@@ -169,22 +169,22 @@ var flipCounter = function(d, options){
   }
 
   function _digitCheck(x, y){
-    digitsOld = _splitToArray(x);
-    digitsNew = _splitToArray(y);
+    digitsOld = _toArray(x);
+    digitsNew = _toArray(y);
     var ylen = digitsNew.length;
     for (var i = 0; i < ylen; i++){
       digitsAnimate[i] = digitsNew[i] != digitsOld[i];
     }
-    _draw_counter();
+    _drawCounter();
   }
 
   // Creates array of digits for easier manipulation
-  function _splitToArray(input){
+  function _toArray(input){
     return input.toString().split('').reverse();
   }
 
   // Sets the correct digits on load
-  function _draw_counter(){
+  function _drawCounter(){
     var bit = 1, html = '', dNew, dOld;
     for (var i = 0, count = digitsNew.length; i < count; i++){
       dNew = _isNumber(digitsNew[i]) ? digitsNew[i] : '';
@@ -204,16 +204,15 @@ var flipCounter = function(d, options){
       bit++;
     }
 
-    var element = document.getElementById(d);
-    element.innerHTML = html;
+    div.innerHTML = html;
 
     var alen = digitsAnimate.length;
 
     // Need a slight delay before adding the 'animate' class or else animation won't fire on FF
     setTimeout(function(){
-      for (i = 0; i < alen; i++){
+      for (var i = 0; i < alen; i++){
         if (digitsAnimate[i]){
-          var a = document.getElementById('digit-a'+i);
+          var a = doc.getElementById('digit-a'+i);
           a.className = a.className+' animate';
         }
       }
