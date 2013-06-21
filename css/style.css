@@ -165,10 +165,10 @@ p.info {
   z-index: 10;
   height: 45px;
   width: 60px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-  -webkit-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.8);
-  box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
 }
 .flip-counter.default .digit .hinge {
   position: absolute;
@@ -280,10 +280,10 @@ p.info {
   z-index: 10;
   height: 45px;
   width: 60px;
-  border-bottom: 1px solid rgba(232, 241, 255, 0.8);
-  -webkit-box-shadow: 0px 5px 7px -4px rgba(232, 241, 255, 0.8);
-  -moz-box-shadow: 0px 5px 7px -4px rgba(232, 241, 255, 0.8);
-  box-shadow: 0px 5px 7px -4px rgba(232, 241, 255, 0.8);
+  border-bottom: 1px solid rgba(232, 241, 255, 0.7);
+  -webkit-box-shadow: 0px 5px 7px -4px rgba(232, 241, 255, 0.7);
+  -moz-box-shadow: 0px 5px 7px -4px rgba(232, 241, 255, 0.7);
+  box-shadow: 0px 5px 7px -4px rgba(232, 241, 255, 0.7);
 }
 .flip-counter.light .digit .hinge {
   position: absolute;
@@ -395,10 +395,10 @@ p.info {
   z-index: 10;
   height: 20px;
   width: 30px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-  -webkit-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.8);
-  box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
 }
 .flip-counter.small .digit .hinge {
   position: absolute;
@@ -510,10 +510,10 @@ p.info {
   z-index: 10;
   height: 100px;
   width: 140px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.8);
-  -webkit-box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.8);
-  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.7);
 }
 .flip-counter.huge .digit .hinge {
   position: absolute;
