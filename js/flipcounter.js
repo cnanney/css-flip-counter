@@ -1,10 +1,9 @@
 /**
  * CSS Flip Counter
- * Version 0.1 - Dec 4, 2011
  *
- * Copyright (c) 2011 Chris Nanney
+ * Copyright (c) 2013 Chris Nanney
  *
- * http://cnanney.com/journal/demo/css-flip-counter/
+ * http://cnanney.com/journal/code/css-flip-counter-revisited/
  *
  * Licensed under MIT
  * http://www.opensource.org/licenses/mit-license.php

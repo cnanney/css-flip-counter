@@ -190,7 +190,7 @@ p.info {
 }
 .flip-counter.default .digit .hinge span {
   height: 0px;
-  z-index: 5px;
+  z-index: 5;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -305,7 +305,7 @@ p.info {
 }
 .flip-counter.light .digit .hinge span {
   height: 0px;
-  z-index: 5px;
+  z-index: 5;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -420,7 +420,7 @@ p.info {
 }
 .flip-counter.small .digit .hinge span {
   height: 0px;
-  z-index: 5px;
+  z-index: 5;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -535,7 +535,7 @@ p.info {
 }
 .flip-counter.huge .digit .hinge span {
   height: 0px;
-  z-index: 5px;
+  z-index: 5;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
