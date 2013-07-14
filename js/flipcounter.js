@@ -189,7 +189,7 @@ var flipCounter = function(d, options){
     for (var i = 0, count = digitsNew.length; i < count; i++){
       dNew = _isNumber(digitsNew[i]) ? digitsNew[i] : '';
       dOld = _isNumber(digitsOld[i]) ? digitsOld[i] : '';
-      html += '<li class="digit" id="digit-a'+i+'">'+
+      html += '<li class="digit" id="'+d+'-digit-a'+i+'">'+
         '<div class="line"></div>'+
         '<span class="front">'+dNew+'</span>'+
         '<span class="back">'+dOld+'</span>'+
@@ -212,7 +212,7 @@ var flipCounter = function(d, options){
     setTimeout(function(){
       for (var i = 0; i < alen; i++){
         if (digitsAnimate[i]){
-          var a = doc.getElementById('digit-a'+i);
+          var a = doc.getElementById(d+'-digit-a'+i);
           a.className = a.className+' animate';
         }
       }
