@@ -119,10 +119,6 @@ p.info {
   text-align: center;
   line-height: 0;
   -webkit-text-stroke: 2px;
-  -webkit-perspective: 300px;
-  -moz-perspective: 300px;
-  -ms-perspective: 300px;
-  perspective: 300px;
   -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
@@ -170,9 +166,17 @@ p.info {
   -moz-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
 }
+.flip-counter.default .digit .hinge-wrap {
+  z-index: 5;
+  position: relative;
+  overflow: visible;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  -ms-perspective: 300px;
+  perspective: 300px;
+}
 .flip-counter.default .digit .hinge {
   position: absolute;
-  z-index: 5;
   height: 45px;
   width: 60px;
   -webkit-transform-style: preserve-3d;
@@ -234,10 +238,6 @@ p.info {
   text-align: center;
   line-height: 0;
   -webkit-text-stroke: 2px;
-  -webkit-perspective: 300px;
-  -moz-perspective: 300px;
-  -ms-perspective: 300px;
-  perspective: 300px;
   -webkit-box-shadow: 1px 1px 5px 0px rgba(232, 241, 255, 0.5);
   -moz-box-shadow: 1px 1px 5px 0px rgba(232, 241, 255, 0.5);
   box-shadow: 1px 1px 5px 0px rgba(232, 241, 255, 0.5);
@@ -285,9 +285,17 @@ p.info {
   -moz-box-shadow: 0px 5px 7px -4px rgba(232, 241, 255, 0.7);
   box-shadow: 0px 5px 7px -4px rgba(232, 241, 255, 0.7);
 }
+.flip-counter.light .digit .hinge-wrap {
+  z-index: 5;
+  position: relative;
+  overflow: visible;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  -ms-perspective: 300px;
+  perspective: 300px;
+}
 .flip-counter.light .digit .hinge {
   position: absolute;
-  z-index: 5;
   height: 45px;
   width: 60px;
   -webkit-transform-style: preserve-3d;
@@ -349,10 +357,6 @@ p.info {
   text-align: center;
   line-height: 0;
   -webkit-text-stroke: 2px;
-  -webkit-perspective: 300px;
-  -moz-perspective: 300px;
-  -ms-perspective: 300px;
-  perspective: 300px;
   -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
@@ -400,9 +404,17 @@ p.info {
   -moz-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
 }
+.flip-counter.small .digit .hinge-wrap {
+  z-index: 5;
+  position: relative;
+  overflow: visible;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  -ms-perspective: 300px;
+  perspective: 300px;
+}
 .flip-counter.small .digit .hinge {
   position: absolute;
-  z-index: 5;
   height: 20px;
   width: 30px;
   -webkit-transform-style: preserve-3d;
@@ -464,10 +476,6 @@ p.info {
   text-align: center;
   line-height: 0;
   -webkit-text-stroke: 2px;
-  -webkit-perspective: 800px;
-  -moz-perspective: 800px;
-  -ms-perspective: 800px;
-  perspective: 800px;
   -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
@@ -515,9 +523,17 @@ p.info {
   -moz-box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.7);
 }
+.flip-counter.huge .digit .hinge-wrap {
+  z-index: 5;
+  position: relative;
+  overflow: visible;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -ms-perspective: 800px;
+  perspective: 800px;
+}
 .flip-counter.huge .digit .hinge {
   position: absolute;
-  z-index: 5;
   height: 100px;
   width: 140px;
   -webkit-transform-style: preserve-3d;

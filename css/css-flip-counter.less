@@ -63,7 +63,6 @@
     // 1px not enough, unfortunately
     -webkit-text-stroke: 2px;
 
-    .perspective(@digitFlipPerspective);
     .box-shadow(1px 1px 5px 0px @shadowColor);
     .border-radius(5px);
 
@@ -124,9 +123,15 @@
       //.box-shadow(@shadows);
     }
 
+    .hinge-wrap {
+      z-index: 5;
+      position: relative;
+      overflow: visible;
+      .perspective(@digitFlipPerspective);
+    }
+
     .hinge {
       position: absolute;
-      z-index: 5;
 
       height: @digitHeight / 2;
       width: @digitWidth;

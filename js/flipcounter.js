@@ -192,10 +192,10 @@ var flipCounter = function(d, options){
         '<div class="line"></div>'+
         '<span class="front">'+dNew+'</span>'+
         '<span class="back">'+dOld+'</span>'+
-        '<div class="hinge">'+
+        '<div class="hinge-wrap"><div class="hinge">'+
         '<span class="front">'+dOld+'</span>'+
         '<span class="back">'+dNew+'</span>'+
-        '</div>'+
+        '</div></div>'+
         '</li>';
       if (bit !== count && bit % 3 === 0){
         html += '<li class="digit-delimiter">,</li>';
