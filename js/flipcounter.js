@@ -16,7 +16,8 @@ var flipCounter = function(d, options){
     value: 0,
     inc: 1,
     pace: 1000,
-    auto: true
+    auto: true,
+    decimals: 0,
   };
 
   var counter = options || {};
@@ -26,7 +27,7 @@ var flipCounter = function(d, options){
     counter[opt] = counter.hasOwnProperty(opt) ? counter[opt] : defaults[opt];
   }
 
-  var digitsOld = [], digitsNew = [], digitsAnimate = [], x, y, nextCount = null;
+  var digitsOld = [], digitsNew = [],decimalsOld = [], decimalsNew = [], digitsAnimate = [], x, y, nextCount = null;
 
   var div = d;
   if (typeof d === 'string'){
@@ -159,20 +160,51 @@ var flipCounter = function(d, options){
 
   function _doCount(first){
     var first_run = typeof first === "undefined" ? false : first;
+
     x = counter.value;
     if (!first_run) counter.value += counter.inc;
     y = counter.value;
+    if(counter.decimals){
+      x = x.toFixed(counter.decimals);
+      y = y.toFixed(counter.decimals);
+    }
     _digitCheck(x, y);
     // Do first animation
     if (counter.auto === true) nextCount = setTimeout(_doCount, counter.pace);
   }
 
   function _digitCheck(x, y){
-    digitsOld = _toArray(x);
-    digitsNew = _toArray(y);
+
+    if(counter.decimals) {
+      x = x.toString().split('.');
+      y = y.toString().split('.');
+
+      decimalsOld = _toArray(x[1]);
+      decimalsNew = _toArray(y[1]);
+      digitsOld = _toArray(x[0]);
+      digitsNew = _toArray(y[0]);
+    }
+    else {
+      digitsOld = _toArray(x);
+      digitsNew = _toArray(y);
+    }
+
     var ylen = digitsNew.length;
+    var dlen = 0;
+    if(counter.decimals) {
+      ylen += decimalsNew.length;
+      dlen = decimalsNew.length;
+    }
+
     for (var i = 0; i < ylen; i++){
-      digitsAnimate[i] = digitsNew[i] != digitsOld[i];
+
+      if (i < dlen) {
+        digitsAnimate[i] = decimalsNew[i] != decimalsOld[i];
+      }
+      else {
+        var j = i - dlen;
+        digitsAnimate[i] = digitsNew[j] != digitsOld[j];
+      }
     }
     _drawCounter();
   }
@@ -185,9 +217,30 @@ var flipCounter = function(d, options){
   // Sets the correct digits on load
   function _drawCounter(){
     var bit = 1, html = '', dNew, dOld;
-    for (var i = 0, count = digitsNew.length; i < count; i++){
-      dNew = _isNumber(digitsNew[i]) ? digitsNew[i] : '';
-      dOld = _isNumber(digitsOld[i]) ? digitsOld[i] : '';
+
+    var i = 0;
+    if (counter.decimals) {
+      for (i = 0; i < counter.decimals; i++){
+        dNew = _isNumber(decimalsNew[i]) ? decimalsNew[i] : '';
+        dOld = _isNumber(decimalsOld[i]) ? decimalsOld[i] : '';
+        html += '<li class="digit" id="'+d+'-digit-a'+i+'">'+
+          '<div class="line"></div>'+
+          '<span class="front">'+dNew+'</span>'+
+          '<span class="back">'+dOld+'</span>'+
+          '<div class="hinge-wrap"><div class="hinge">'+
+          '<span class="front">'+dOld+'</span>'+
+          '<span class="back">'+dNew+'</span>'+
+          '</div></div>'+
+          '</li>';
+      }
+      html += '<li class="digit-delimiter">.</li>'
+    }
+
+    count = digitsNew.length;
+    for (i; i < digitsAnimate.length; i++){
+      var j = i - (digitsAnimate.length - digitsNew.length);
+      dNew = _isNumber(digitsNew[j]) ? digitsNew[j] : '';
+      dOld = _isNumber(digitsOld[j]) ? digitsOld[j] : '';
       html += '<li class="digit" id="'+d+'-digit-a'+i+'">'+
         '<div class="line"></div>'+
         '<span class="front">'+dNew+'</span>'+
