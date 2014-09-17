@@ -17,7 +17,7 @@ var flipCounter = function(d, options){
     inc: 1,
     pace: 1000,
     auto: true,
-    decimals: 0,
+    decimals: 0
   };
 
   var counter = options || {};
@@ -146,7 +146,7 @@ var flipCounter = function(d, options){
    */
   this.getValue = function(){
     return counter.value;
-  }
+  };
 
   /**
    * Stops all running increments.
@@ -154,7 +154,7 @@ var flipCounter = function(d, options){
   this.stop = function(){
     if (nextCount) _clearNext();
     return this;
-  }
+  };
 
   //---------------------------------------------------------------------------//
 
@@ -236,7 +236,7 @@ var flipCounter = function(d, options){
       html += '<li class="digit-delimiter">.</li>'
     }
 
-    count = digitsNew.length;
+    var count = digitsNew.length;
     for (i; i < digitsAnimate.length; i++){
       var j = i - (digitsAnimate.length - digitsNew.length);
       dNew = _isNumber(digitsNew[j]) ? digitsNew[j] : '';
