@@ -161,13 +161,10 @@ var flipCounter = function(d, options){
   function _doCount(first){
     var first_run = typeof first === "undefined" ? false : first;
 
-    x = counter.value;
+    x = counter.value.toFixed(counter.decimals);
+
     if (!first_run) counter.value += counter.inc;
-    y = counter.value;
-    if(counter.decimals){
-      x = x.toFixed(counter.decimals);
-      y = y.toFixed(counter.decimals);
-    }
+    y = counter.value.toFixed(counter.decimals);
     _digitCheck(x, y);
     // Do first animation
     if (counter.auto === true) nextCount = setTimeout(_doCount, counter.pace);
