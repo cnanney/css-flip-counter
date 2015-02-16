@@ -20,7 +20,6 @@ h1 {
   font-weight: 700;
   font-size: 60px;
   /* Web fonts look bad in Chrome even with -webkit-font-smoothing, so this is a cheap way to soften the jaggies */
-
 }
 #style-switcher {
   *zoom: 1;
@@ -115,7 +114,7 @@ p.info {
   width: 60px;
   height: 90px;
   margin-left: 10px;
-  background-color: #000000;
+  background-color: black;
   text-align: center;
   line-height: 0;
   -webkit-text-stroke: 2px;
@@ -142,8 +141,8 @@ p.info {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   text-indent: 2px;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: black;
+  color: white;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
@@ -193,7 +192,7 @@ p.info {
   transform-origin: 50% 100%;
 }
 .flip-counter.default .digit .hinge span {
-  height: 0px;
+  height: 0;
   z-index: 5;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -224,8 +223,8 @@ p.info {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   font-size: 52px;
-  color: #000000;
-  text-indent: 3.3333333333333335px;
+  color: black;
+  text-indent: 3.33333333px;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 .flip-counter.light .digit {
@@ -262,7 +261,7 @@ p.info {
   font-weight: 700;
   text-indent: 2px;
   background-color: #e8f1ff;
-  color: #ffffff;
+  color: white;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
@@ -312,7 +311,7 @@ p.info {
   transform-origin: 50% 100%;
 }
 .flip-counter.light .digit .hinge span {
-  height: 0px;
+  height: 0;
   z-index: 5;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -344,7 +343,7 @@ p.info {
   font-weight: 700;
   font-size: 52px;
   color: #e8f1ff;
-  text-indent: 3.3333333333333335px;
+  text-indent: 3.33333333px;
   text-shadow: 1px 1px 5px rgba(232, 241, 255, 0.5);
 }
 .flip-counter.small .digit {
@@ -353,7 +352,7 @@ p.info {
   width: 30px;
   height: 40px;
   margin-left: 5px;
-  background-color: #000000;
+  background-color: black;
   text-align: center;
   line-height: 0;
   -webkit-text-stroke: 2px;
@@ -380,8 +379,8 @@ p.info {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   text-indent: 2px;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: black;
+  color: white;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
@@ -431,7 +430,7 @@ p.info {
   transform-origin: 50% 100%;
 }
 .flip-counter.small .digit .hinge span {
-  height: 0px;
+  height: 0;
   z-index: 5;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -462,8 +461,8 @@ p.info {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   font-size: 25px;
-  color: #000000;
-  text-indent: 1.6666666666666667px;
+  color: black;
+  text-indent: 1.66666667px;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 .flip-counter.huge .digit {
@@ -472,7 +471,7 @@ p.info {
   width: 140px;
   height: 200px;
   margin-left: 20px;
-  background-color: #000000;
+  background-color: black;
   text-align: center;
   line-height: 0;
   -webkit-text-stroke: 2px;
@@ -499,8 +498,8 @@ p.info {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   text-indent: 2px;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: black;
+  color: white;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
@@ -550,7 +549,7 @@ p.info {
   transform-origin: 50% 100%;
 }
 .flip-counter.huge .digit .hinge span {
-  height: 0px;
+  height: 0;
   z-index: 5;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -581,7 +580,7 @@ p.info {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   font-size: 70px;
-  color: #000000;
-  text-indent: 6.666666666666667px;
+  color: black;
+  text-indent: 6.66666667px;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
