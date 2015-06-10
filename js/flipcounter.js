@@ -17,7 +17,8 @@ var flipCounter = function(d, options){
     inc: 1,
     pace: 1000,
     auto: true,
-    decimals: 0
+    decimals: 0,
+    places: 0
   };
 
   var counter = options || {};
@@ -208,7 +209,13 @@ var flipCounter = function(d, options){
 
   // Creates array of digits for easier manipulation
   function _toArray(input){
-    return input.toString().split('').reverse();
+    var output = input.toString().split('').reverse();
+    if (counter.places > 0 && output.length < counter.places) {
+      for (var i = output.length; i < counter.places; i++){
+        output.push('0');
+      }
+    }
+    return output;
   }
 
   // Sets the correct digits on load
