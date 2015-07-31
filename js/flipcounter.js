@@ -194,6 +194,7 @@ var flipCounter = function(d, options){
       dlen = decimalsNew.length;
     }
 
+    digitsAnimate = []; //reset to reset correctly all digit placeholder
     for (var i = 0; i < ylen; i++){
 
       if (i < dlen) {
@@ -264,8 +265,13 @@ var flipCounter = function(d, options){
 
     var alen = digitsAnimate.length;
 
+    if (this.lastTimeout) {
+        //reset timeout, so very fast setValue() calls work correctly without race conditions
+        clearTimeout(this.lastTimeout);
+        this.lastTimeout = null;
+    }
     // Need a slight delay before adding the 'animate' class or else animation won't fire on FF
-    setTimeout(function(){
+    this.lastTimeout = setTimeout(function(){
       for (var i = 0; i < alen; i++){
         if (digitsAnimate[i]){
           var a = doc.getElementById(d+'-digit-a'+i);
